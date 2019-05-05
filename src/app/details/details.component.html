@@ -1,0 +1,59 @@
+<div class="details-page">
+  <a class="back__button"><b>&#8630;</b> BACK</a>
+  <section class="main-weather">
+    <section class="card-header">
+      <svg  viewBox="4302 163 1218 406">
+        <defs>
+          <style>.aa {
+            opacity: 0.6;
+          }</style>
+          <linearGradient id="aa" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#000075"/>
+            <stop offset="1" stop-color="#ff8c8c"/>
+          </linearGradient>
+        </defs>
+        <path class="aa" fill="url(#aa)"
+              d="M20,0H1198a20,20,0,0,1,20,20V406a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z"
+              transform="translate(4302 163)"/>
+      </svg>
+      <div class="header-content__wrapper">
+        <div class="today-weather__container">
+          <div class="temp-state__container">
+            <span class="temperature__text">{{ temp }}°</span>
+            <span class="weather-state__text">{{ state }}</span>
+          </div>
+          <div class="hum-wind__container">
+            <div class="hum__container">
+              <span class="hum__text">humidity</span>
+              <span class="hum-value__text">{{ hum }} %</span>
+            </div>
+
+            <div class="hum-wind__separator">&nbsp;</div>
+
+            <div class="wind__container">
+              <span class="wind__text">wind</span>
+              <span class="wind-value__text">{{ wind }} K/M</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="city-name__container">
+          <div class="city-name__underline">
+            <span class="city-name__text">{{ city }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="body-content__wrapper">
+      <section class="forecast__container">
+        <!-- display forecast for the whole week --> 
+        <div class="day-weather__container">
+          <span class="day-name"> </span>
+          <span class="day-temp"> °</span>
+          <span class="day-condition"> </span>
+        </div>
+      </section>
+    </main>
+  </section>
+</div>
