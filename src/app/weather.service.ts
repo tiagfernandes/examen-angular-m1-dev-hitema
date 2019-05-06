@@ -86,7 +86,7 @@ export class WeatherService {
       days.push({
         condition: getRandomCondition(),
         temp: getRandomTemp(),
-        name: moment().add(i, 'day').format('dddd') 
+        name: moment().add(i, 'day').format('dddd')
       });
     }
     return days;

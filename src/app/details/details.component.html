@@ -44,13 +44,7 @@
             <span class="city-name__text">{{ city }}</span>
           </div>
 
-          <div class="weather-icon__container">
-            <i *ngIf="state === 'rain'" class="fas fa-cloud-showers-heavy fa-10x"></i>
-            <i *ngIf="state === 'sun'" class="fas fa-sun fa-10x"></i>
-            <i *ngIf="state === 'clouds'" class="fas fa-cloud fa-10x"></i>
-            <i *ngIf="state === 'storm'" class="fas fa-poo-storm fa-10x"></i>
-            <i *ngIf="state === 'snow'" class="fas fa-snowflake fa-10x"></i>
-          </div>
+          <icon-weather condition="{{ state }}" size="grand"></icon-weather>
         </div>
       </div>
     </section>
@@ -60,6 +54,7 @@
         <!-- display forecast for the whole week -->
         <div class="day-weather__container" *ngFor="let day of forecast">
           <span class="day-name">{{ day.name }}</span>
+          <icon-weather condition="{{ day.condition }}" size="petit"></icon-weather>
           <span class="day-temp">{{ day.temp | number:'1.0-1':'fr-FR' }}°</span>
           <span class="day-condition">{{ day.condition }}</span>
         </div>

@@ -1,16 +1,9 @@
 <section class="weather__card" routerLink="/details/{{name}}">
   <input (click)="$event.stopPropagation();" [(ngModel)]="name" (ngModelChange)="updateName(name)"
     class="city-name__text">
-  <!-- <span class="city-name__text">
-      {{ name }}
-    </span> -->
-  <div class="weather-icon__container">
-    <i *ngIf="condition === 'rain'" class="fas fa-cloud-showers-heavy fa-10x"></i>
-    <i *ngIf="condition === 'sun'" class="fas fa-sun fa-10x"></i>
-    <i *ngIf="condition === 'clouds'" class="fas fa-cloud fa-10x"></i>
-    <i *ngIf="condition === 'storm'" class="fas fa-poo-storm fa-10x"></i>
-    <i *ngIf="condition === 'snow'" class="fas fa-snowflake fa-10x"></i>
-  </div>
+
+  <icon-weather condition="{{ condition }}" size="grand"></icon-weather>
+  
   <div class="temperature-text__container">
     <span class="temperature__text">{{ currentTemp | number:'1.0-1':'fr-FR' }}</span>
     <span class="temperature-metric__text">°</span>

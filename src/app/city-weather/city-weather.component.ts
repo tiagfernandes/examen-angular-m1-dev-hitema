@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { WeatherService } from '../weather.service';
 
 @Component({
@@ -14,8 +14,13 @@ export class CityWeatherComponent implements OnInit {
   minTemp: number;
   name: string;
 
-  constructor(public weatherService: WeatherService) {
-    this.name = 'Paris';
+  constructor(public weatherService: WeatherService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+    });
+    if(!this.name){
+      this.name = 'Paris';
+    }
   }
 
   ngOnInit() {

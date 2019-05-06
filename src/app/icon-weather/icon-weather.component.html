@@ -1,0 +1,7 @@
+<div class="weather-icon__container">
+    <i *ngIf="condition === 'rain'" class="fas fa-cloud-showers-heavy" [ngClass]="{'fa-10x': size === 'grand', 'fa-5x': size === 'petit'}"></i>
+    <i *ngIf="condition === 'sun'" class="fas fa-sun" [ngClass]="{'fa-10x': size === 'grand', 'fa-5x': size === 'petit'}"></i>
+    <i *ngIf="condition === 'clouds'" class="fas fa-cloud" [ngClass]="{'fa-10x': size === 'grand', 'fa-5x': size === 'petit'}"></i>
+    <i *ngIf="condition === 'storm'" class="fas fa-poo-storm" [ngClass]="{'fa-10x': size === 'grand', 'fa-5x': size === 'petit'}"></i>
+    <i *ngIf="condition === 'snow'" class="fas fa-snowflake" [ngClass]="{'fa-10x': size === 'grand', 'fa-5x': size === 'petit'}"></i>
+</div>
