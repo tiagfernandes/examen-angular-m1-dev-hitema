@@ -7,6 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { CityWeatherComponent } from './city-weather/city-weather.component';
 import { DetailsComponent } from './details/details.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'fr');
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,9 @@ import { DetailsComponent } from './details/details.component';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [{
+    provide: localeFr, useValue: 'fr-FR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
