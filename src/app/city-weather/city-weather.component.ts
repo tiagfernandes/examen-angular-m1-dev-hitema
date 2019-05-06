@@ -28,4 +28,9 @@ export class CityWeatherComponent implements OnInit {
     this.minTemp = this.weatherService.getMinTemp(this.name);
     this.maxTemp = this.weatherService.getMaxTemp(this.name);
   }
+
+  updateName(name: string) {
+    this.name = name;
+    this.loadWeather();
+  }
 }

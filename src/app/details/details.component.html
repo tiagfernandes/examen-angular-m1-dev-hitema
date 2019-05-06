@@ -2,19 +2,21 @@
   <a class="back__button" routerLink="/"><b>&#8630;</b> BACK</a>
   <section class="main-weather">
     <section class="card-header">
-      <svg  viewBox="4302 163 1218 406">
+      <svg viewBox="4302 163 1218 406">
         <defs>
-          <style>.aa {
-            opacity: 0.6;
-          }</style>
+          <style>
+            .aa {
+              opacity: 0.6;
+            }
+          </style>
           <linearGradient id="aa" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#000075"/>
-            <stop offset="1" stop-color="#ff8c8c"/>
+            <stop offset="0" stop-color="#000075" />
+            <stop offset="1" stop-color="#ff8c8c" />
           </linearGradient>
         </defs>
         <path class="aa" fill="url(#aa)"
-              d="M20,0H1198a20,20,0,0,1,20,20V406a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z"
-              transform="translate(4302 163)"/>
+          d="M20,0H1198a20,20,0,0,1,20,20V406a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z"
+          transform="translate(4302 163)" />
       </svg>
       <div class="header-content__wrapper">
         <div class="today-weather__container">
@@ -41,13 +43,21 @@
           <div class="city-name__underline">
             <span class="city-name__text">{{ city }}</span>
           </div>
+
+          <div class="weather-icon__container">
+            <i *ngIf="state === 'rain'" class="fas fa-cloud-showers-heavy fa-10x"></i>
+            <i *ngIf="state === 'sun'" class="fas fa-sun fa-10x"></i>
+            <i *ngIf="state === 'clouds'" class="fas fa-cloud fa-10x"></i>
+            <i *ngIf="state === 'storm'" class="fas fa-poo-storm fa-10x"></i>
+            <i *ngIf="state === 'snow'" class="fas fa-snowflake fa-10x"></i>
+          </div>
         </div>
       </div>
     </section>
 
     <main class="body-content__wrapper">
       <section class="forecast__container">
-        <!-- display forecast for the whole week --> 
+        <!-- display forecast for the whole week -->
         <div class="day-weather__container" *ngFor="let day of forecast">
           <span class="day-name">{{ day.name }}</span>
           <span class="day-temp">{{ day.temp | number:'1.0-1':'fr-FR' }}°</span>
